@@ -2,6 +2,17 @@ pipeline{
     agent any
     stages{
 
+        stage("cleanup"){
+             steps{
+              cleanWs()
+             }
+        }
+
+        stage("checkout scm"){
+               steps{
+                  checkout scm
+               }
+           }
         stage("first stage"){
             steps{
                 sh "pwd"
