@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+    stages{
+        stage("clean workspace"){
+            steps{
+                cleanWs()
+            }
+        }
+        stage("first stage"){
+            steps{
+                sh "pwd"
+                sh "ls"
+                sh "mkdir test"
+                 sh "ls"
+                dir("test"){
+                 sh "pwd"
+                 sh "ls"   
+                }
+               
+            }
+        }
+        stage("second stage"){
+            steps{
+                dir("test"){
+                    sh "echo ahmed > file.txt"
+                }
+               
+                
+            }
+        }
+    }
+}
