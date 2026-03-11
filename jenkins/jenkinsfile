@@ -29,7 +29,7 @@ pipeline{
         stage("second stage"){
             steps{
                 dir("fold"){
-                    sh "echo ahmed > file.txt"
+                    sh "echo ahmed >> file.txt"
                 }
                
                 
