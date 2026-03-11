@@ -10,9 +10,9 @@ pipeline{
             steps{
                 sh "pwd"
                 sh "ls"
-                sh "mkdir test"
-                 sh "ls"
-                dir("test"){
+                sh "cat fold/new"
+                 
+                dir("fold"){
                  sh "pwd"
                  sh "ls"   
                 }
@@ -21,7 +21,7 @@ pipeline{
         }
         stage("second stage"){
             steps{
-                dir("test"){
+                dir("fold"){
                     sh "echo ahmed > file.txt"
                 }
                
